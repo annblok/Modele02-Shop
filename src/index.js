@@ -4,13 +4,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './styles/main.scss';
 
-import $ from 'jquery';
-
-$('.box').html('Hello');
-
 import Swiper, { Navigation, Pagination } from 'swiper';
-
-
 
 var swiper = new Swiper(".offerSwiper", {
     slidesPerView: 3,
@@ -28,6 +22,7 @@ var swiper = new Swiper(".offerSwiper", {
     },
     modules: [Navigation, Pagination],
 });
+
 var swiper = new Swiper(".trendsSwiper", {
     slidesPerView: 3,
     spaceBetween: 30,
