@@ -2,6 +2,7 @@
 
 $green: #27300f;
 $orange: #d26a22;
+$dark-orange: #cf5c0d;
 $white: #fff;
 
 $font-jost: 'Jost', sans-serif;
@@ -260,6 +261,11 @@ body {
     border-radius: 3.8rem;
     display: inline-block;
     border: none;
+    cursor: pointer;
+    transition: .2s;
+    &:hover {
+        background-color: $dark-orange;
+    }
     &_min {
         font-size: 1.4rem;
         padding: 2rem 3.4rem;
@@ -697,8 +703,11 @@ body {
         background-size: cover;
         background-position: center center;
         opacity: .4;
+        transform: scale(1);
+        transition: .2s;
         &:hover {
             opacity: 1;
+            transform: scale(1.05);
         }
     }
     &__mastercard {
