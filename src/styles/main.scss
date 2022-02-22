@@ -16,6 +16,10 @@ body {
     font-size: 1.6rem;
     font-family: $font-jost;
     color: $green;
+    background-image: url(../images/bg.png);
+    background-size: contain;
+    background-position-x: center;
+    background-repeat: no-repeat;
 }
 
 .header {
@@ -25,6 +29,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 8rem;
+    &__navigation {
+        flex-grow: 1;
+        margin-left: 4rem
+    }
     &__nav {
         display: flex;
         list-style-type: none;
@@ -35,6 +44,7 @@ body {
     &__link {
         color: $green;
         text-decoration: none;
+        transition: .2s;
         &:hover {
             color: $orange;
         }
@@ -43,13 +53,16 @@ body {
         color: $green;
         font-weight: 500;
         text-decoration: none;
+        flex-basis: 160px;
+        letter-spacing: .13rem;
+        transition: .2s;
         &:hover {
             color: $orange;
         }
     }
     &__cart {
         display: block;
-        width: 4rem;
+        flex-basis: 4rem;
         height: 4rem;
         border-radius: 100%;
         background-color: $orange;
@@ -60,6 +73,8 @@ body {
         position: relative;
         border: 1px solid $orange;
         padding: 0;
+        transition: .2s;
+        cursor: pointer;
         &:hover {
             background-color: $green;
             border: 1px solid $green;
@@ -69,7 +84,7 @@ body {
         font-size: .8rem;
         color: $white;
         position: absolute;
-        right: 1rem;
+        right: 0.7rem;
         top: .6rem;
     }
 }
@@ -78,8 +93,13 @@ body {
     background-image: url(../images/logo.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 12rem;
+    flex-basis: 12rem;
     height: 3.2rem;
+    &_footer {
+        flex-basis: 18rem;
+        height: 4.8rem;
+        margin-top: 0.8rem;
+    }
 }
 .container {
     max-width: 1440px;
@@ -88,10 +108,6 @@ body {
     padding-right: 15px;
 }
 .main {
-    background-image: url(../images/main.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
     position: relative;
     padding-bottom: 187px;
     z-index: 0;
@@ -132,6 +148,8 @@ body {
     }
     &__image {
         width: 92%;
+        border-radius: 100%;
+        animation: shadow 5s linear infinite;
     }
     &__text {
         padding-top: 4rem;
@@ -158,6 +176,7 @@ body {
             box-shadow: 0 0 0 4px $white, 0 0 0 5px $green;
             border-radius: 100%;
             position: absolute;
+            transition: .2s;
         }
         &_1 {
             top: 46px;
@@ -274,10 +293,6 @@ body {
 }
 
 .offer {
-    background-image: url(../images/offer.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
     padding-top: 2rem;
     padding-bottom: 12.8rem;
     &__text {
@@ -302,6 +317,7 @@ body {
         background-size: cover;
         position: relative;
         z-index: 0;
+        transition: .3s;
         &_white {
             height: 520px;
             display: flex;
@@ -365,6 +381,7 @@ body {
             gap: 2rem;
             letter-spacing: 0.1rem;
             opacity: .8;
+            transition: .2s;
             &:hover {
                 opacity: 1;
             }
@@ -423,6 +440,7 @@ body {
         &::after {
             color: rgba($green, .4);
             font-size: 20px;
+            transition: .2s;
         }
     }
     &-button-next {
@@ -534,12 +552,16 @@ body {
 }
   
 .trends {
+    padding-top: 4rem;
+    padding-bottom: 8rem;
     &__text {
         margin-top: 4rem;
     }
 }
 
 .catalog {
+    padding-top: 4rem;
+    padding-bottom: 8rem;
     &__list {
         margin-top: 8.5rem;
         margin-bottom: 5rem;
@@ -559,6 +581,8 @@ body {
         padding: 0;
         max-width: 182px;
         margin: 6rem auto 0;
+        cursor: pointer;
+        transition: .2s;
         &:hover {
             opacity: 1;
         }
@@ -592,6 +616,7 @@ body {
         text-decoration: none;
         border-radius: 4rem;
         display: block;
+        transition: .2s;
         &:hover {
             border: 1px solid $orange;
             color: $orange;
@@ -608,6 +633,7 @@ body {
         border-radius: 2rem;
         padding: 2.7rem 3rem 3.8rem;
         box-sizing: border-box;
+        transition: .3s;
         &:hover {
             box-shadow: 0 0 0 2px rgba($green, 0.4) inset;
         }
@@ -653,8 +679,7 @@ body {
     }
 }
 .delivery {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 8rem;
     &__box {
         display: flex;
         font-size: 1.8rem;
@@ -725,7 +750,7 @@ body {
 }
 .contact {
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 16rem;
     &-box {
         display: flex;
         align-items: center;
@@ -811,6 +836,7 @@ body {
         padding: 2.2rem 3rem;
         width: 100%;
         box-sizing: border-box;
+        transition: .2s;
         &:focus {
             border: 1px solid rgba($green, 1);
             outline: none;
@@ -836,9 +862,108 @@ body {
         border-bottom: 1px solid #ecedec;
     }
 }
+
+footer {
+    border-top: 1px solid #d4d6cf;
+    padding-top: 7.9rem;
+    padding-bottom: 7rem;
+}
 .footer {
-    background-image: url(../images/footer.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.8rem;
+    }
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        flex-basis: 66.5%;
+    }
+    &__list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    &__item {
+        margin-bottom: 2.6rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__link {
+        color: $green;
+        text-decoration: none;
+        transition: .2s;
+        &:hover {
+            color: $orange;
+        }
+    }
+    &__tel {
+        font-size: 2.7rem;
+        display: block;
+        margin-bottom: 3rem;
+    }
+    &__text {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.6rem;
+        color: rgba($green, .6);
+        margin-top: 4rem;
+    }
+    &__author {
+        color: rgba($green, .6);
+        text-decoration: none;
+        transition: .2s;
+        &:hover {
+            color: rgba($green, 1);
+        }
+    }
+}
+
+.footer-social {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0;
+    margin-top: 3rem;
+    margin-bottom: 0;
+    &__link {
+        display: block;
+        width: 4.6rem;
+        height: 4.6rem;
+        border: 2px solid $green;
+        border-radius: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: .8;
+        transition: .2s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__vk {
+        background-image: url(../images/vk.svg);
+        background-size: 2.3rem;
+    }
+    &__inst {
+        background-image: url(../images/instagram.svg);
+        background-size: 1.8rem;
+    }
+    &__fb {
+        background-image: url(../images/facebook.svg);
+        background-size: 1.8rem;
+    }
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 0 0 rgba($green, .5);
+    }
+    50% {
+        box-shadow: 20px 20px 33px 0 rgba($green, .5);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba($green, .5);
+    }
 }
